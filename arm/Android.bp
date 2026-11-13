@@ -88,13 +88,6 @@ android_app_import {
     product_specific: true,
 }
 
-cc_prebuilt_library_shared {
-    name: "libjni_latinimegoogle",
-    srcs: ["proprietary/product/lib/libjni_latinimegoogle.so"],
-    prefer: true,
-    product_specific: true,
-}
-
 genrule {
     name: "com.google.android.gmssystem.prodvic.apex-genrule",
     out: ["com.google.android.gmssystem.prodvic.apex"],

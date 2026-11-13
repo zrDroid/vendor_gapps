@@ -7,7 +7,6 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     FamilyLinkParentalControls \
     Phonesky \
-    libjni_latinimegoogle \
     com.google.android.gmssystem.prodvic
 
 ifeq ($(TARGET_IS_GROUPER),)
