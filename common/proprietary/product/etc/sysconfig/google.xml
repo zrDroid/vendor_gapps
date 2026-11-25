@@ -16,7 +16,9 @@
 
 <!-- Consolidates MindTheGapps settings with crDroid 17.0 addons google.xml.
      Addons source: crdroidandroid/android_vendor_addons@9fa1a45891db455ddccdd21721c655511dcb2307
-     Keep both sets of entries when updating this file. -->
+     Keep supported phone settings from both sources when updating this file.
+     Omit the unused Glasses association and automatic-rollback-denylisted-app
+     tags, which crDroid 17.0 does not parse. -->
 <!-- These are configurations that must exist on all GMS devices. -->
 <config>
     <!-- These are the standard packages that are white-listed to always have internet
@@ -124,9 +126,6 @@
     <!-- AI services open-source network component can only bind back to the core package. -->
     <allow-association target="com.google.android.as.oss" allowed="com.google.android.as" />
 
-    <!-- Glasses Secure can interact with the AI services network component. -->
-    <allow-association target="com.google.android.glasses.secure" allowed="com.google.android.as.oss" />
-
     <!-- Specify the explicit set of other applications whose app data directories are
         accessible by other applications. -->
     <app-data-isolation-whitelisted-app package="com.google.android.gms" />
@@ -138,10 +137,6 @@
     <!-- Specify the installer eligiable for updating the given GMS package. -->
     <update-ownership package="com.google.android.gms" installer="com.android.vending" />
     <update-ownership package="com.google.android.verifier" installer="com.android.vending" />
-
-    <!-- Denylist of packages that are not eligible for automatic rollback -->
-    <automatic-rollback-denylisted-app package="com.android.vending" />
-    <automatic-rollback-denylisted-app package="com.google.android.gms" />
 
     <!-- Device Lock Controller must be able to enforce managed-device provisioning. -->
     <allow-in-power-save package="com.google.android.devicelockcontroller" />
